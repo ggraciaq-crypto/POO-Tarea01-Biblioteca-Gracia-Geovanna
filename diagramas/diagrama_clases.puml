@@ -1,0 +1,65 @@
+@startuml Diagrama_Clases_Biblioteca
+
+class Persona {
+    - _cedula: str
+    - _nombre: str
+    - _apellido: str
+    + cedula: str
+    + nombre: str
+    + apellido: str
+    + __str__(): str
+}
+
+class Estudiante {
+    - _carrera: str
+    + carrera: str
+    + __str__(): str
+}
+
+class Libro {
+    - _isbn: str
+    - _titulo: str
+    - _autor: str
+    - _disponible: bool
+    + isbn: str
+    + titulo: str
+    + autor: str
+    + disponible: bool
+    + prestar(): None
+    + devolver(): None
+    + __str__(): str
+}
+
+class Prestamo {
+    - _libro: Libro
+    - _estudiante: Estudiante
+    - _fecha_prestamo: str
+    - _fecha_devolucion: str
+    - _activo: bool
+    + libro: Libro
+    + estudiante: Estudiante
+    + activo: bool
+    + registrar_devolucion(): None
+    + __str__(): str
+}
+
+class Biblioteca {
+    - _nombre: str
+    - _libros: list
+    - _estudiantes: list
+    - _prestamos: list
+    + registrar_libro(): None
+    + registrar_estudiante(): None
+    + prestar_libro(): str
+    + devolver_libro(): str
+    + consultar_prestamos_activos(): list
+}
+
+Estudiante --|> Persona
+Biblioteca "1" *-- "1..*" Libro
+Biblioteca "1" o-- "0..*" Estudiante
+Biblioteca "1" *-- "0..*" Prestamo
+Prestamo --> Libro
+Prestamo --> Estudiante
+
+@enduml
