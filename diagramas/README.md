@@ -1,7 +1,7 @@
 #  Sistema de Gestión de Biblioteca UNEMI
 
 * Nombres: Jean Pierre Mina Quintero
-           Geovanna Mailyn Gracia Quiñonez
+           ,Geovanna Mailyn Gracia Quiñonez
 * Carrera:Ingeniería en Software
 * Semestre:4to semestre
 
